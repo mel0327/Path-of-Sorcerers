@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dxkd7a5bm6wxw"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_aufp3"]
-[ext_resource type="PackedScene" uid="uid://ddjqqu46ktnq0" path="res://sprite_2d.tscn" id="2_elkk3"]
+[ext_resource type="Script" path="res://sprite_2d.gd" id="2_hyx0d"]
 [ext_resource type="PackedScene" uid="uid://bo48bevfi4nuw" path="res://common/shadow.tscn" id="3_lt6tx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ei3e4"]
@@ -11,7 +11,8 @@ radius = 20.025
 motion_mode = 1
 script = ExtResource("1_aufp3")
 
-[node name="Sprite2D" parent="." instance=ExtResource("2_elkk3")]
+[node name="Sprite2D" type="Sprite2D" parent="."]
+script = ExtResource("2_hyx0d")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 40)
