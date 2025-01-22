@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cu2rb5dl4ljte" path="res://levels/rooms/room_a.tscn" id="1_c1rbo"]
 [ext_resource type="PackedScene" uid="uid://dxkd7a5bm6wxw" path="res://Player.tscn" id="2_1bx7x"]
-[ext_resource type="PackedScene" uid="uid://cxh4aajfsbf6l" path="res://weapon.tscn" id="3_5uf5l"]
+[ext_resource type="PackedScene" uid="uid://cuhu6vwvw7xbr" path="res://mob.tscn" id="3_13ufu"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -10,4 +10,5 @@
 
 [node name="Player" parent="." instance=ExtResource("2_1bx7x")]
 
-[node name="Weapon" parent="Player" instance=ExtResource("3_5uf5l")]
+[node name="Mob" parent="." instance=ExtResource("3_13ufu")]
+position = Vector2(357, 247)
