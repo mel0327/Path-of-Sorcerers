@@ -12,3 +12,9 @@
 
 [node name="Mob" parent="." instance=ExtResource("3_13ufu")]
 position = Vector2(357, 247)
+
+[node name="Mob2" parent="." instance=ExtResource("3_13ufu")]
+position = Vector2(618, 481)
+
+[node name="Mob3" parent="." instance=ExtResource("3_13ufu")]
+position = Vector2(976, 278)
