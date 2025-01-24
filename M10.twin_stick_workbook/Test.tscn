@@ -11,10 +11,10 @@
 [node name="Player" parent="." instance=ExtResource("2_1bx7x")]
 
 [node name="Mob" parent="." instance=ExtResource("3_13ufu")]
-position = Vector2(357, 247)
+position = Vector2(506, 486)
 
 [node name="Mob2" parent="." instance=ExtResource("3_13ufu")]
-position = Vector2(618, 481)
+position = Vector2(745, 821)
 
 [node name="Mob3" parent="." instance=ExtResource("3_13ufu")]
-position = Vector2(976, 278)
+position = Vector2(1135, 577)

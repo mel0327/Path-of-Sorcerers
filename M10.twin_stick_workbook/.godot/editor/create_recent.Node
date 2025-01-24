@@ -1,7 +1,8 @@
 CollisionShape2D
 Sprite2D
-ColorRect
 Area2D
+ProgressBar
+ColorRect
 CharacterBody2D
 Camera2D
 Marker2D
