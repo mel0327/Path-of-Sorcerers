@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dxkd7a5bm6wxw"]
+[gd_scene load_steps=11 format=3 uid="uid://dxkd7a5bm6wxw"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_aufp3"]
 [ext_resource type="Texture2D" uid="uid://bw03btxpkxde4" path="res://player/godot_bottom.png" id="2_fg15n"]
@@ -7,7 +7,6 @@
 [ext_resource type="Script" path="res://weapon_pivot.gd" id="5_hucp4"]
 [ext_resource type="PackedScene" uid="uid://cxh4aajfsbf6l" path="res://weapon.tscn" id="6_aup4w"]
 [ext_resource type="Texture2D" uid="uid://dekkcmj408pvt" path="res://player/hand_fire.png" id="7_iaolp"]
-[ext_resource type="Texture2D" uid="uid://206pnoc2labm" path="res://ui/bars/health_point.png" id="8_nf7do"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ei3e4"]
 radius = 20.025
@@ -28,12 +27,12 @@ expand_margin_top = 4.0
 expand_margin_right = 4.0
 expand_margin_bottom = 4.0
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8un0j"]
-texture = ExtResource("8_nf7do")
-texture_margin_left = 4.0
-texture_margin_top = 16.0
-texture_margin_right = 4.0
-texture_margin_bottom = 8.0
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mma5g"]
+bg_color = Color(0.301877, 0.916511, 0.46012, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
 
 [node name="Player" type="CharacterBody2D"]
 motion_mode = 1
@@ -79,6 +78,6 @@ offset_top = -100.0
 offset_right = 70.0
 offset_bottom = -70.0
 theme_override_styles/background = SubResource("StyleBoxFlat_mfils")
-theme_override_styles/fill = SubResource("StyleBoxTexture_8un0j")
+theme_override_styles/fill = SubResource("StyleBoxFlat_mma5g")
 value = 50.0
 show_percentage = false
