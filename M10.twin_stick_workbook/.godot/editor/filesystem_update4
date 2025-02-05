@@ -1,9 +1,10 @@
 res://default_env.tres
-res://Test.tscn
+res://pickup.tscn
 res://levels/rooms/tilesets/floating_dungeon_tileset.tres
 res://levels/rooms/tilesets/tileset_invisible_walls.tres
-res://pickup.tscn
-res://HealingItem.gd
+res://Test.tscn
+res://chest.tscn
+res://chest.gd
+res://mob.tscn
 res://item_healing.gd
-res://pickup.gd
-res://item.gd
+res://Player.tscn
