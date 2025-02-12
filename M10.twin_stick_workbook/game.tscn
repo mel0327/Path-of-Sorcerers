@@ -1,0 +1,126 @@
+[gd_scene load_steps=21 format=4 uid="uid://qyb3f0m04725"]
+
+[ext_resource type="PackedScene" uid="uid://dxkd7a5bm6wxw" path="res://Player.tscn" id="1_0e248"]
+[ext_resource type="Script" path="res://game.gd" id="1_fjm2m"]
+[ext_resource type="PackedScene" uid="uid://cu2rb5dl4ljte" path="res://levels/rooms/room_a.tscn" id="2_004kp"]
+[ext_resource type="PackedScene" uid="uid://cuhu6vwvw7xbr" path="res://mob.tscn" id="3_8gmie"]
+[ext_resource type="PackedScene" uid="uid://d2ylcj1vj78f8" path="res://pickup.tscn" id="4_q3dls"]
+[ext_resource type="PackedScene" uid="uid://5urfmge1qio7" path="res://chest.tscn" id="5_4q5j3"]
+[ext_resource type="Texture2D" uid="uid://cxjy8qxpmubt2" path="res://levels/props/gems_red_1.png" id="7_mb1xb"]
+[ext_resource type="PackedScene" uid="uid://dgayuh42w4v6u" path="res://levels/rooms/room_b.tscn" id="8_8o0gh"]
+[ext_resource type="Texture2D" uid="uid://bdp7ywxga0yem" path="res://levels/props/books_1.png" id="8_wxs74"]
+[ext_resource type="Texture2D" uid="uid://bcivk4rl7q5p1" path="res://levels/props/gems_silver_2.png" id="9_5r172"]
+[ext_resource type="PackedScene" uid="uid://cq0mmphkbrvmm" path="res://levels/rooms/room_c.tscn" id="9_eg0cm"]
+[ext_resource type="Texture2D" uid="uid://6e1ykwlqveol" path="res://levels/props/gems_mixed_1.png" id="10_nqxka"]
+[ext_resource type="PackedScene" uid="uid://wdey00p3syru" path="res://levels/background/background_blue_sky.tscn" id="11_fi2ta"]
+[ext_resource type="Texture2D" uid="uid://bc365rt4aaaor" path="res://levels/props/book_large.png" id="11_wh4yp"]
+[ext_resource type="Texture2D" uid="uid://btweid25cp856" path="res://levels/props/books_4.png" id="12_l436m"]
+[ext_resource type="Texture2D" uid="uid://c1cch51fhbxi8" path="res://levels/props/rocks_sword.png" id="16_pxusl"]
+[ext_resource type="Texture2D" uid="uid://dxhbawh7l6wux" path="res://levels/props/gems_green_1.png" id="17_def6x"]
+[ext_resource type="PackedScene" uid="uid://dlxjrgals3rg2" path="res://levels/invisible_walls.tscn" id="18_crdvm"]
+[ext_resource type="PackedScene" uid="uid://c3fl3stluv0gn" path="res://levels/bridges.tscn" id="19_dqmrj"]
+[ext_resource type="Texture2D" uid="uid://btgnwrmru84fx" path="res://levels/props/table_medium_red.png" id="20_8niui"]
+
+[node name="Game" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_fjm2m")
+
+[node name="Player" parent="." instance=ExtResource("1_0e248")]
+position = Vector2(330, 900)
+
+[node name="RoomA" parent="." instance=ExtResource("2_004kp")]
+
+[node name="PickUp" parent="RoomA" instance=ExtResource("4_q3dls")]
+position = Vector2(1133.74, 1099.3)
+rotation = 0.00114604
+
+[node name="PickUp2" parent="RoomA" instance=ExtResource("4_q3dls")]
+position = Vector2(280.58, 366.322)
+rotation = 0.00114604
+
+[node name="Mob" parent="RoomA" instance=ExtResource("3_8gmie")]
+position = Vector2(801.697, 264.919)
+rotation = 0.00114604
+
+[node name="GemsRed1" type="Sprite2D" parent="RoomA"]
+position = Vector2(1271.73, 240.458)
+rotation = 0.00114604
+texture = ExtResource("7_mb1xb")
+
+[node name="TableMediumRed" type="Sprite2D" parent="RoomA"]
+position = Vector2(347.423, 503.398)
+rotation = 0.00114604
+texture = ExtResource("20_8niui")
+
+[node name="RoomB" parent="." instance=ExtResource("8_8o0gh")]
+position = Vector2(2305, 255)
+
+[node name="Mob" parent="RoomB" instance=ExtResource("3_8gmie")]
+position = Vector2(801.697, 264.919)
+rotation = 0.00114604
+
+[node name="Mob2" parent="RoomB" instance=ExtResource("3_8gmie")]
+position = Vector2(372, 581)
+rotation = 0.00114604
+
+[node name="GemsSilver2" type="Sprite2D" parent="RoomB"]
+position = Vector2(811, 96)
+texture = ExtResource("9_5r172")
+
+[node name="GemsMixed1" type="Sprite2D" parent="RoomB"]
+position = Vector2(27, 288)
+texture = ExtResource("10_nqxka")
+
+[node name="BookLarge" type="Sprite2D" parent="RoomB"]
+position = Vector2(792, 586)
+texture = ExtResource("11_wh4yp")
+
+[node name="Books4" type="Sprite2D" parent="RoomB"]
+position = Vector2(868, 596)
+texture = ExtResource("12_l436m")
+
+[node name="Books1" type="Sprite2D" parent="RoomB"]
+position = Vector2(504, 68)
+rotation = -0.00114604
+texture = ExtResource("8_wxs74")
+
+[node name="Chest" parent="RoomB" instance=ExtResource("5_4q5j3")]
+position = Vector2(1208, 647)
+
+[node name="RoomC" parent="." instance=ExtResource("9_eg0cm")]
+position = Vector2(1792, -2048)
+
+[node name="Mob" parent="RoomC" instance=ExtResource("3_8gmie")]
+position = Vector2(801.697, 264.919)
+rotation = 0.00114604
+
+[node name="Mob2" parent="RoomC" instance=ExtResource("3_8gmie")]
+position = Vector2(406, 313)
+rotation = 0.00114604
+
+[node name="Mob3" parent="RoomC" instance=ExtResource("3_8gmie")]
+position = Vector2(563, 903)
+rotation = 0.00229208
+
+[node name="PickUp" parent="RoomC" instance=ExtResource("4_q3dls")]
+position = Vector2(578, 468)
+
+[node name="PickUp2" parent="RoomC" instance=ExtResource("4_q3dls")]
+position = Vector2(890, 976)
+
+[node name="RocksSword" type="Sprite2D" parent="RoomC"]
+position = Vector2(1352, 1126)
+texture = ExtResource("16_pxusl")
+
+[node name="GemsGreen1" type="Sprite2D" parent="RoomC"]
+position = Vector2(1006, 668)
+texture = ExtResource("17_def6x")
+
+[node name="InvisibleWalls" parent="." instance=ExtResource("18_crdvm")]
+unique_name_in_owner = true
+tile_map_data = PackedByteArray("AAAMAAMAAAAAAAAAAAANAAMAAAAAAAAAAAAOAAMAAAAAAAAAAAAPAAMAAAAAAAAAAAAQAAQAAAAAAAAAAAAQAAUAAAAAAAAAAAAQAAcAAAAAAAAAAAAPAAcAAAAAAAAAAAAOAAUAAAAAAAAAAAAOAAYAAAAAAAAAAAANAAUAAAAAAAAAAAAMAAUAAAAAAAAAAAAaAAAAAAAAAAAAAAAaAP//AAAAAAAAAAAZAP7/AAAAAAAAAAAYAP7/AAAAAAAAAAAYAAAAAAAAAAAAAAAXAAAAAAAAAAAAAAAWAP//AAAAAAAAAAAWAPz/AAAAAAAAAAAWAP3/AAAAAAAAAAAWAP7/AAAAAAAAAAAYAPz/AAAAAAAAAAAYAP3/AAAAAAAAAAAGAAoAAAAAAAAAAAAGAAkAAAABAAAAAAA=")
+
+[node name="Bridges" parent="." instance=ExtResource("19_dqmrj")]
+tile_map_data = PackedByteArray("AAAOAAQAAAAAAAEAAAANAAQAAAAAAAEAAAAMAAQAAAAAAAEAAAALAAQAAAAAAAEAAAAQAAYAAAAAAAEAAAARAAYAAAAAAAEAAAAPAAQAAAAAAAAAAAAPAAUAAAAEAAEAAAAPAAYAAAACAAAAAAAZAAEAAAADAAEAAAAZAAAAAAADAAEAAAAZAP//AAAAAAAAAAAYAP//AAAAAAEAAAAXAP//AAACAAAAAAAXAP7/AAADAAEAAAAXAPz/AAADAAEAAAAXAP3/AAADAAEAAAAXAPv/AAADAAEAAAAXAPr/AAADAAEAAAA=")
+
+[node name="BackgroundBlueSky" parent="." instance=ExtResource("11_fi2ta")]

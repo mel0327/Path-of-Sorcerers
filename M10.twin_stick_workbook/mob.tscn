@@ -8,7 +8,7 @@ radius = 18.0
 height = 122.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4pswi"]
-radius = 487.406
+radius = 376.261
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4pymf"]
 radius = 73.0069
