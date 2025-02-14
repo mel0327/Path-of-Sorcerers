@@ -22,6 +22,7 @@ grow_vertical = 2
 color = Color(0.0745098, 0.0745098, 0.0745098, 0.368627)
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -56,14 +57,21 @@ horizontal_alignment = 1
 [node name="ReplayButton" type="Button" parent="PanelContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_color = Color(0.6768, 0.896219, 1, 1)
 theme_override_font_sizes/font_size = 30
 text = "Play again"
+flat = true
 
 [node name="QuitButton" type="Button" parent="PanelContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_color = Color(0.678431, 0.898039, 1, 1)
 theme_override_font_sizes/font_size = 30
 text = "Quit
 "
+flat = true
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/ReplayButton" to="." method="_on_replay_button_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

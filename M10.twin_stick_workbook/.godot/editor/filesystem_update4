@@ -1,7 +1,8 @@
 res://default_env.tres
 res://game.tscn
-res://addons/gdpractice/assets/theme.tres
 res://levels/rooms/tilesets/floating_dungeon_tileset.tres
 res://levels/rooms/tilesets/tileset_invisible_walls.tres
-res://game.gd
+res://end_menu.gd
 res://end_menu.tscn
+res://confettis.tscn
+res://common/particles/confettis/confettis.gdshader

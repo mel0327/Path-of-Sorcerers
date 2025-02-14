@@ -8,7 +8,6 @@ class_name Game extends Node2D
 func _ready() -> void:
 	_invisible_walls.hide()
 
-
 	_teleporter.body_entered.connect(func (body: Node) -> void:
 		if body is Player:
 			_end_menu.open()

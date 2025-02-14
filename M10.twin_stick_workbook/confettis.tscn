@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://bqcta35o4yjvj"]
+
+[ext_resource type="Shader" path="res://common/particles/confettis/confettis.gdshader" id="1_xxwpc"]
+[ext_resource type="Texture2D" uid="uid://c33mf20ohybyi" path="res://common/particles/white_circle.png" id="2_0fyxw"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gvwb8"]
+shader = ExtResource("1_xxwpc")
+
+[sub_resource type="Curve" id="Curve_rl5ps"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.195364, 1), 0.0, 0.0, 0, 0, Vector2(0.496689, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_kx6gp"]
+curve = SubResource("Curve_rl5ps")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_skbxl"]
+lifetime_randomness = 0.2
+particle_flag_align_y = true
+particle_flag_disable_z = true
+direction = Vector3(0, -1, 0)
+initial_velocity_min = 250.0
+initial_velocity_max = 600.0
+gravity = Vector3(0, 400, 0)
+scale_min = 0.3
+scale_max = 0.6
+scale_curve = SubResource("CurveTexture_kx6gp")
+hue_variation_min = -1.0
+hue_variation_max = 0.13
+anim_speed_min = 10.0
+anim_speed_max = 20.0
+anim_offset_max = 1.0
+
+[node name="ConfettisParticles" type="GPUParticles2D"]
+material = SubResource("ShaderMaterial_gvwb8")
+emitting = false
+amount = 48
+process_material = SubResource("ParticleProcessMaterial_skbxl")
+texture = ExtResource("2_0fyxw")
+lifetime = 1.5
+one_shot = true
+preprocess = 0.1
+explosiveness = 0.9
