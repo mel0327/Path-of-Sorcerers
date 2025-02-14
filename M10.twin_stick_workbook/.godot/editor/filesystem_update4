@@ -3,8 +3,5 @@ res://game.tscn
 res://addons/gdpractice/assets/theme.tres
 res://levels/rooms/tilesets/floating_dungeon_tileset.tres
 res://levels/rooms/tilesets/tileset_invisible_walls.tres
-res://levels/rooms/tilesets/tileset_bridges.tres
-res://mob.tscn
-res://Player.gd
-res://Player.tscn
-res://levels/bridges.tscn
+res://game.gd
+res://end_menu.tscn

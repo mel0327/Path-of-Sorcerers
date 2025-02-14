@@ -1,0 +1,88 @@
+[gd_scene load_steps=11 format=3 uid="uid://bmqgbf0lvtquc"]
+
+[ext_resource type="Texture2D" uid="uid://cwurq7yvv5xdu" path="res://teleporter/teleporter_base.png" id="1_n1qhp"]
+[ext_resource type="Texture2D" uid="uid://cb5e2w7i8756i" path="res://teleporter/teleporter_beam_green.png" id="2_so5ej"]
+[ext_resource type="Texture2D" uid="uid://bvq8qshecx2by" path="res://teleporter/teleporter_particle_green.png" id="3_yppri"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xbq0f"]
+size = Vector2(160, 164)
+
+[sub_resource type="Curve" id="Curve_eimxh"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.298013, 1), 0.0, 0.0, 0, 0, Vector2(0.748344, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_nfy1x"]
+curve = SubResource("Curve_eimxh")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_gggoi"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(50, 10, 1)
+direction = Vector3(0, -1, 0)
+spread = 0.0
+initial_velocity_min = 55.0
+initial_velocity_max = 80.0
+scale_min = 0.3
+scale_max = 0.5
+scale_curve = SubResource("CurveTexture_nfy1x")
+
+[sub_resource type="Animation" id="Animation_l05fl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_g1kkk"]
+resource_name = "idle"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 2.14355, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.705882), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6b228"]
+_data = {
+"RESET": SubResource("Animation_l05fl"),
+"idle": SubResource("Animation_g1kkk")
+}
+
+[node name="Teleporter" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_xbq0f")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_n1qhp")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+texture = ExtResource("2_so5ej")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+process_material = SubResource("ParticleProcessMaterial_gggoi")
+texture = ExtResource("3_yppri")
+lifetime = 2.0
+randomness = 0.1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_6b228")
+}
